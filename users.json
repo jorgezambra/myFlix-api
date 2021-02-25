@@ -1,0 +1,7 @@
+{"_id":{"$oid":"5f7b8cd2878591758a3dd032"},"Username":"martha123","Password":"hello","email":"sdggf3@gmail.com","Birthday":{"$date":"1985-08-02T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"5f7b6b1e878591758a3dd02b"},{"$oid":"5f7b85b1878591758a3dd02d"}]}
+{"_id":{"$oid":"5f7b8d1e878591758a3dd034"},"Username":"bill","Password":"bill123","email":"bill123@gmail.com","Birthday":{"$date":"1988-01-07T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"5f7b8604878591758a3dd02f"},{"$oid":"5f7b84c4878591758a3dd02c"}]}
+{"_id":{"$oid":"5f7b8d47878591758a3dd035"},"Username":"jill","Password":"jill123","email":"jill123@gmail.com","Birthday":{"$date":"1967-11-13T00:00:00.000Z"},"FavoriteMovies":[{"$oid":"5f7b84c4878591758a3dd02c"},{"$oid":"5f7b8604878591758a3dd02e"}]}
+{"_id":{"$oid":"5f7cbc459fa6b5025665fd43"},"FavoriteMovies":[],"Username":"jason","Password":"jason123","Email":"jason123@gmail.com","__v":0}
+{"_id":{"$oid":"5f7e4b584d3c0c046a9d20c2"},"FavoriteMovies":[],"Username":"jacob","Password":"son123","Email":"jason123@gmail.com","Birthday":{"$date":"1967-03-03T00:00:00.000Z"},"__v":0}
+{"_id":{"$oid":"5f7e4bee4d3c0c046a9d20c3"},"FavoriteMovies":[],"Username":"pabloescobar","Password":"colom123","Email":"pablito@gmail.com","Birthday":{"$date":"1956-03-02T00:00:00.000Z"},"__v":0}
+{"_id":{"$oid":"5f7f359d746e8202451c5a86"},"FavoriteMovies":[],"Username":"jorgeadmin","Password":"caracas","email":"jorgezambra3@gmail.com","Birthday":{"$date":"1983-08-02T00:00:00.000Z"},"__v":0}
