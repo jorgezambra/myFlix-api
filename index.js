@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require('express');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
@@ -47,6 +48,12 @@ let auth = require('./auth')(app);
 app.use(morgan('common'));
 
 app.use(express.static('public'));
+
+app.use("/client", express.static(path.join(__dirname, "client", "dist")));
+
+app.get("/client/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.use(cors());
 
