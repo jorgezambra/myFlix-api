@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mah Movies</title>
+  </head>
+<body>
+  <div>
+    <h1>Documentation</h1>
+    <p>Mah Movies is a web application that will
+      provide users with access to information about different movies, directors, and genres. Users
+      will be able to sign up, update their personal information, and create a list of their favorite
+      movies.
+    </p>
+    <p>
+  The table below describes each endpoint of this API and how to access it.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>URL</th>
+      <th>HTTP method</th>
+      <th>Request body data format</th>
+      <th>Response body data format</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Get a list of all movies</td>
+      <td>/movies</td>
+      <td>GET</td>
+      <td>None</td>
+      <td>
+        JSON object holding data about all movies. Structure:
+        <p>
+          { Title: "The Godfather",
+          <br>Description: "Crime, Mafia movie...",
+          <br>Genre: {
+            <br>Name: "Crime",
+            <br>Description: "Movie involving criminal activity"},
+          <br>Director: {
+            <br>Name: "Francis Ford Coppola",
+            <br>Bio: "Francis Coppola in an Amrican director..."
+            <br>Birthdate: "1954-03-6"
+          <br>ImagePath: "casablanca.png",
+          <br>Featured: false
+          <br>}
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Get data about a single movie by title</td>
+      <td>/movies/[title]</td>
+      <td>GET</td>
+      <td>None</td>
+      <td>
+        JSON object holding data about a single movie.  Contains same structure as previous example (GET /movies)
+      </td>
+    </tr>
+    <tr>
+      <td>Get data about a movie genre</td>
+      <td>/genre/[name]</td>
+      <td>GET</td>
+      <td>None</td>
+      <td>
+        JSON object holding data about a movie genre, containing name and
+        description. Structure:
+        <p>
+          {Name: "Action",
+          <br>Description: "Movie is fast paced usually violent,
+          etc."
+          <br>}
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Get data about a director</td>
+      <td>movies/directors/[name]</td>
+      <td>GET</td>
+      <td>None</td>
+      <td>
+        JSON object holding data about a director. Structure:
+        <p>
+          {Name: "Francis Ford Coppola",
+          <br>Bio: "American Director,etc.",
+          <br> birthday: "04-07-1939",
+          <br>Death: ""}
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Add a new user to the registry.</td>
+      <td>/users</td>
+      <td>POST</td>
+      <td>
+        JSON object holding data about the user to add. Structure:
+        <p>
+          { username: "Jake",
+          <br>password: "aka3",
+          <br>email:"jake.wake@gmail.com",
+          <br>dateofbirth: "12-12-2001"
+        </p>
+      </td>
+      <td>
+        JSON object holding data about the user that was added. Structure:
+        <p>
+          { id: 7,
+            <br>Username: "Jake",
+            <br>Password: "aka3",
+            <br>email:"jake.wake@gmail.com",
+            <br>dateofbirth: "12-12-2001"
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Update a user's information</td>
+      <td>/users/[username]</td>
+      <td>PUT</td>
+      <td>
+        JSON object holding data about the user to add. Structure:
+        <p>
+        Username: "Jake",
+          <br>Password: "aka3",
+          <br>email:"jake.wake@gmail.com",
+          <br>dateofbirth: "12-12-2001"
+        </p>
+      </td>
+      <td>A message indicating the user's information was updated and a JSON object with all the users new info</td>
+    </tr>
+    <tr>
+      <td>Add a movie to the user's favorites list</td>
+      <td>/users/[username]/FavoriteMovies/[movie_id]</td>
+      <td>POST</td>
+      <td>None</td>
+      <td>
+        A message indicating the movie title was added to the user's
+        favorites list including JSON object with all the user info including the new movie that was added.
+      </td>
+    </tr>
+    <tr>
+      <td>Delete a movie from the user's favorites list</td>
+      <td>/users/[username]/FavoriteMovies/[movie_id]</td>
+      <td>DELETE</td>
+      <td>None</td>
+      <td>
+        A message indicating the movie title was deleted from the user's
+        favorites list with JSON object with all user info minus the favorite movie that was removed
+      </td>
+    </tr>
+    <tr>
+      <td>Remove a user from the registry.</td>
+      <td>/users/[username]</td>
+      <td>DELETE</td>
+      <td>None</td>
+      <td>A message indicating the user was removed from the registry.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
+  </div>
+</body>
+</html>

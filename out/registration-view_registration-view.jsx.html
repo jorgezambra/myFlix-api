@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: registration-view/registration-view.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: registration-view/registration-view.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import { Form, Container, Button, Col, Row } from 'react-bootstrap';
+import './registration-view.scss';
+
+/**
+* Login view
+* @function LoginView
+* @param {func} props - onLoggedIn props
+* @returns {LoginView}
+*/
+export function RegistrationView() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [birthday, setBirthday] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const createdUser = {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: birthday,
+    };
+
+    axios
+      .post('https://myflix-apii.herokuapp.com/users', createdUser)
+      .then((response) => {
+        console.log(response);
+        console.log(response.data);
+        alert('User created successfully');
+        window.open('/', '_self');
+      })
+      .catch((e) => {
+        console.log(e.response);
+        alert('Error processing request');
+      });
+  };
+
+  return (
+    &lt;Container>
+      &lt;br>&lt;/br>
+      &lt;Form style={{ width: '20rem' }}>
+        &lt;Form.Group align='center' controlId='formBasicUsername'>
+          &lt;Form.Label>&lt;h5>Username&lt;/h5>&lt;/Form.Label>
+          &lt;Form.Control
+            type='text'
+            placeholder='Username'
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          &lt;Form.Text align='left' className='text-muted'>
+            *min. 5 characters
+          &lt;/Form.Text>
+        &lt;/Form.Group>
+
+        &lt;Form.Group align='center' controlId='formBasicPassword'>
+          &lt;Form.Label>&lt;h5>Password&lt;/h5>&lt;/Form.Label>
+          &lt;Form.Control
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        &lt;/Form.Group>
+
+        &lt;Form.Group align='center' controlId='formBasicEmail'>
+          &lt;Form.Label>&lt;h5>Email address&lt;/h5>&lt;/Form.Label>
+          &lt;Form.Control
+            type='email'
+            value={email}
+            placeholder='Enter email'
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        &lt;/Form.Group>
+
+        &lt;Form.Group align='center' controlId='formBasicDate'>
+          &lt;Form.Label>&lt;h5>Date of Birth&lt;/h5>&lt;/Form.Label>
+          &lt;Form.Control
+            type='date'
+            value={birthday}
+            placeholder='12/31/1986'
+            onChange={(e) => setBirthday(e.target.value)}
+          />
+        &lt;/Form.Group>
+
+        &lt;Form.Group align='center'>
+          &lt;Row>
+            &lt;Col>
+              &lt;Button variant='dark' type='submit' onClick={handleSubmit}>
+                Submit
+        &lt;/Button>
+            &lt;/Col>
+            &lt;Col>
+              &lt;Link to={`/`}>
+                &lt;Button variant='dark link' type='submit'>
+                  Cancel
+          &lt;/Button>
+              &lt;/Link>
+            &lt;/Col>
+          &lt;/Row>
+        &lt;/Form.Group>
+      &lt;/Form>
+    &lt;/Container >
+  );
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="MainView.html">MainView</a></li><li><a href="MovieCard.html">MovieCard</a></li><li><a href="MovieView.html">MovieView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#DirectorView">DirectorView</a></li><li><a href="global.html#GenreView">GenreView</a></li><li><a href="global.html#getMovies">getMovies</a></li><li><a href="global.html#handleSubmit">handleSubmit</a></li><li><a href="global.html#LoginView">LoginView</a></li><li><a href="global.html#MoviesList">MoviesList</a></li><li><a href="global.html#onLoggedIn">onLoggedIn</a></li><li><a href="global.html#onLoggedOut">onLoggedOut</a></li><li><a href="global.html#ProfileView">ProfileView</a></li><li><a href="global.html#VisibilityFilterInput">VisibilityFilterInput</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Mon Feb 22 2021 18:58:12 GMT-0300 (Chile Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
